@@ -7,8 +7,8 @@ namespace Commons
     public class InteractivePropConstraints
     {
         private InteractivePropsType mPropType { get; }
-        public int mNumOfTriggeredChangeToStage2;
-        public int mNumOfTriggeredChangeToStage3;
+        private int mNumOfTriggeredChangeToStage2 { get; set;}
+        private int mNumOfTriggeredChangeToStage3 { get; set;}
         public InteractivePropConstraints(InteractivePropsType propType, int numOfTriggeredChangeToStage2, int numOfTriggeredChangeToStage3)
         {
             mPropType = propType;
