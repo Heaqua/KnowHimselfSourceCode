@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Commons;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class BathroomToiletProp : BaseInteractiveProp
 {
@@ -39,7 +40,7 @@ public class BathroomToiletProp : BaseInteractiveProp
 }
 
 
-public class BathroomToilet : MonoBehaviour
+public class BathroomToilet : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private BathroomToiletProp props;
 
@@ -58,18 +59,15 @@ public class BathroomToilet : MonoBehaviour
     {
     }
 
-    void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        OnOpenBathroomToiletMenu.Invoke();
         Debug.Log("OnOpenBathroomToiletMenu");
     }
 
-    void OnMouseOver()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        OnCloseBathroomToiletMenu.Invoke();
         Debug.Log("OnCloseBathroomToiletMenu");
     }
-
 
     void OnMouseExit()
     {
