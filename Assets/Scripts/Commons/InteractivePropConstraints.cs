@@ -6,14 +6,14 @@ namespace Commons
 {
     public class InteractivePropConstraints
     {
-        private InteractivePropsType mPropType { get; }
-        private int mNumOfTriggeredChangeToStage2 { get; set;}
-        private int mNumOfTriggeredChangeToStage3 { get; set;}
+        public InteractivePropsType mPropType { get; }
+        public int NumOfTriggeredChangeToStage2 { get; set; }
+        public int NumOfTriggeredChangeToStage3 { get; set; }
         public InteractivePropConstraints(InteractivePropsType propType, int numOfTriggeredChangeToStage2, int numOfTriggeredChangeToStage3)
         {
             mPropType = propType;
-            mNumOfTriggeredChangeToStage2 = numOfTriggeredChangeToStage2;
-            mNumOfTriggeredChangeToStage3 = numOfTriggeredChangeToStage3;
+            NumOfTriggeredChangeToStage2 = numOfTriggeredChangeToStage2;
+            NumOfTriggeredChangeToStage3 = numOfTriggeredChangeToStage3;
         }
     }
 
