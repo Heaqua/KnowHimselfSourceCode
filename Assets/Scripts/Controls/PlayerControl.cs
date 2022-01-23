@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour
     [Range(0f, 90f)] public float RotateClampBottom = 90f;
 
     public float CurrentSpeed { get; private set; } = 0f;
+    float CamPitch;
 
     PlayerMoveInput Input;
     CharacterController Player;
@@ -25,6 +26,7 @@ public class PlayerControl : MonoBehaviour
         Player = GetComponent<CharacterController>();
         Input = GetComponent<PlayerMoveInput>();
         CurrentSpeed = 0f;
+        CamPitch = 0f;
     }
 
     private void Update()
@@ -56,9 +58,22 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.LookInput.sqrMagnitude >= 0.01f)
         {
-            // Add cinemachine lines here
+            if (CamTarget != null)
+            {
+                CamPitch += Input.LookInput.y * RotateSpeed * Time.deltaTime;
+                CamPitch = ClampAngle(CamPitch, -RotateClampBottom, RotateClampTop);
+                CamTarget.transform.localRotation = Quaternion.Euler(CamPitch, 0f, 0f);
+            }            
             transform.Rotate(Vector3.up * Input.LookInput.x * RotateSpeed * Time.deltaTime);
         }
     }
 
+    public static float ClampAngle(float angle, float min, float max)
+    {
+        if (angle < -360f)
+            angle += 360f;
+        if (angle > 360f)
+            angle -= 360f;
+        return Mathf.Clamp(angle, min, max);
+    }
 }
