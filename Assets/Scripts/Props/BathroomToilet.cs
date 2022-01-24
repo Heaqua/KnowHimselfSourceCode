@@ -15,7 +15,7 @@ public class BathroomToiletProp : BaseInteractiveProp
         drinkToiletWater = new BaseInteraction(true);
     }
 
-    public void GoToToilet()
+    public void UseToilet()
     {
         goToToilet.interact();
     }
@@ -61,26 +61,25 @@ public class BathroomToilet : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("OnOpenBathroomToiletMenu");
+        Debug.Log("OnOpenBathroomToiletMenu.Invoke");
+        OnOpenBathroomToiletMenu.Invoke();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("OnCloseBathroomToiletMenu");
+        Debug.Log("OnCloseBathroomToiletMenu.Invoke");
+        OnCloseBathroomToiletMenu.Invoke();
     }
 
-    void OnMouseExit()
+    public void UseToilet()
     {
-        Debug.Log("OnMouseExit: " + gameObject.name);
+        Debug.Log("UseToilet");
+        props.UseToilet();
     }
 
-    void GoToToilet()
+    public void DrinkToiletWater()
     {
-        props.GoToToilet();
-    }
-
-    void DrinkToiletWater()
-    {
+        Debug.Log("UseToilet");
         props.DrinkToiletWater();
     }
 }
