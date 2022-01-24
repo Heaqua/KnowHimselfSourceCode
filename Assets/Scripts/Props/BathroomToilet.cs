@@ -40,16 +40,12 @@ public class BathroomToiletProp : BaseInteractiveProp
 }
 
 
-public class BathroomToilet : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class BathroomToilet : MonoBehaviour, IPointerEnterHandler
 {
     private BathroomToiletProp props;
 
     [Header("Open Bathroom Toilet Menu")]
     public UnityEvent OnOpenBathroomToiletMenu;
-
-    [Header("Close Bathroom Toilet Menu")]
-    public UnityEvent OnCloseBathroomToiletMenu;
-
     void Start()
     {
         props = new BathroomToiletProp();
@@ -65,12 +61,6 @@ public class BathroomToilet : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         OnOpenBathroomToiletMenu.Invoke();
     }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("OnCloseBathroomToiletMenu.Invoke");
-        OnCloseBathroomToiletMenu.Invoke();
-    }
-
     public void UseToilet()
     {
         Debug.Log("UseToilet");
@@ -79,7 +69,7 @@ public class BathroomToilet : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void DrinkToiletWater()
     {
-        Debug.Log("UseToilet");
+        Debug.Log("DrinkToiletWater");
         props.DrinkToiletWater();
     }
 }
