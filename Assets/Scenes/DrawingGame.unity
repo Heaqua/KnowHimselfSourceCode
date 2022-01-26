@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 110482050}
   - component: {fileID: 110482051}
   - component: {fileID: 110482052}
+  - component: {fileID: 110482049}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -161,7 +162,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: -180, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &110482050
+--- !u!114 &110482049
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,6 +170,27 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110482047}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d2ea3101e4e1542b1b16289497394a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brushTexture: {fileID: 2800000, guid: 26d7e7d70da15d14bbf03063efe8f081, type: 3}
+  brushMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  brushMaterial: {fileID: 2100000, guid: 7f19ba9c17111934c810a9de035cee8b, type: 2}
+  brushColor: {r: 1, g: 1, b: 1, a: 1}
+  brushScale: 1
+  isDrawing: 0
+  score: {fileID: 2158945177828835784}
+  stage: 1
+  drawingCamera: {fileID: 1592557480}
+--- !u!114 &110482050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110482047}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 944ebca658b9796429ab159ac4107389, type: 3}
   m_Name: 
