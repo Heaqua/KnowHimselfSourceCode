@@ -23,6 +23,10 @@ namespace Commons
         mConstraintDict = new Dictionary<InteractivePropsType, InteractivePropConstraints>()
         {
             {InteractivePropsType.BathroomMirror, new InteractivePropConstraints(InteractivePropsType.BathroomMirror, 1, 1)},
+            {InteractivePropsType.BathroomToilet, new InteractivePropConstraints(InteractivePropsType.BathroomToilet, 1, 1)},
+            {InteractivePropsType.SleepPlaceLaptop, new InteractivePropConstraints(InteractivePropsType.SleepPlaceLaptop, 1, 1)},
+            {InteractivePropsType.SleepPlaceBed, new InteractivePropConstraints(InteractivePropsType.SleepPlaceBed, 1, 1)},
+            {InteractivePropsType.KitchenKnife, new InteractivePropConstraints(InteractivePropsType.KitchenKnife, 1, 1)},
         };
 
 

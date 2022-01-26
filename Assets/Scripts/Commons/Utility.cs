@@ -16,8 +16,7 @@ namespace Commons
         NULL,
         BathroomMirror,
         BathroomMirrorBrokenPieces,
-        BathroomToothBrush,
-        BathroomShaver,
+        BathroomSink,
         BathroomToilet,
         DeskLaptop,
         DeskKnife,
@@ -25,10 +24,11 @@ namespace Commons
         DeskWallet,
         SleepPlaceBed,
         SleepPlaceLight,
+        SleepPlaceLaptop,
         SleepPlaceWardrobe,
         KitchenKnife,
         KitchenFridge,
-        KitchenGlassSlove
+        KitchenGasStove
 
     }
 }
