@@ -19,12 +19,14 @@ public class PlayerControl : MonoBehaviour
     float CamPitch;
 
     PlayerMoveInput Input;
+    PlayerMoveAnimator Animator;
     CharacterController Player;
 
     private void Awake()
     {
         Player = GetComponent<CharacterController>();
         Input = GetComponent<PlayerMoveInput>();
+        Animator = GetComponent<PlayerMoveAnimator>();
         CurrentSpeed = 0f;
         CamPitch = 0f;
     }
@@ -46,6 +48,10 @@ public class PlayerControl : MonoBehaviour
 
         Player.Move(InputDir.normalized * (MoveSpeed * Time.deltaTime));
 
+        if (Animator == null)
+            return;
+
+        Animator.UpdateMovement(0f, Input.MoveInput.y * MoveSpeed);
     }
 
     private void LateUpdate()

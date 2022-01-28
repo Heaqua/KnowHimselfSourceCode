@@ -1,7 +1,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerControl))]
-[RequireComponent(typeof(Animator))]
 
 public class PlayerMoveAnimator : MonoBehaviour
 {
@@ -20,6 +19,8 @@ public class PlayerMoveAnimator : MonoBehaviour
     {
         Player = GetComponent<PlayerControl>();
         Anim = GetComponent<Animator>();
+        if (Anim == null)
+            Anim = GetComponentInChildren<Animator>();
 
         MoveXHash = Animator.StringToHash(MoveXFloatParameter);
         MoveZHash = Animator.StringToHash(MoveZFloatParameter);

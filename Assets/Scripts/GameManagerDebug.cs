@@ -7,8 +7,9 @@ using UnityEngine.InputSystem;
 
 public class GameManagerDebug : MonoBehaviour
 {
-    [Header("Debug Using InputSystem")]
+    [Header("Camera Debug - Switch to Laptop")]
     public InputAction CamLaptop;
+    [Header("Camera Debug - Toggle Stages")]
     public InputAction StageToggle;
 
     private void Awake()
