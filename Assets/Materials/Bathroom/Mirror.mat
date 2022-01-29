@@ -21,14 +21,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mirror
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: bf0989867140e2b41a4c63a583f649d8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -90,6 +89,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_14e4ff8234274d0bbaf6ced1d6485f31: 6
+    - Vector1_3e04ec1153a848e7a37e7d30794f9b3d: 1
+    - Vector1_b303ec0efa174564bd0acf250dbe291d: 2.75
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -110,7 +112,7 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -119,6 +121,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_894e8e47631846349395814dc588fa50: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
+    - Color_8ec0d0df2dc546b690c7b7f75d622ff1: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
+    - Vector2_123f7d29b76a4ae5abc5ee113752350d: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_c59eee754cf84d7ea344978553de707f: {r: 0, g: 0.075, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

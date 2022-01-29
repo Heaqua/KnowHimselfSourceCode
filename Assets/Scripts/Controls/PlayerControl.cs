@@ -51,7 +51,7 @@ public class PlayerControl : MonoBehaviour
         if (Animator == null)
             return;
 
-        Animator.UpdateMovement(0f, Input.MoveInput.y * MoveSpeed);
+        Animator.UpdateMovement(Input.MoveInput * MoveSpeed);
     }
 
     private void LateUpdate()
