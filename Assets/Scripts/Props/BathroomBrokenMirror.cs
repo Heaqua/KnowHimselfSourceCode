@@ -5,13 +5,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class BathroomMirrorProp : BaseInteractiveProp
+public class BathroomBrokenMirrorProp : BaseInteractiveProp
 {
     private BaseInteraction clearAway;
     private BaseInteraction killYourself;
     public int NumOfTriggeredChangeToStage2 { get; private set; }
     public int NumOfTriggeredChangeToStage3 { get; private set; }
-    public BathroomMirrorProp(int NumOfTriggeredChangeToStage2, int NumOfTriggeredChangeToStage3) : base(InteractivePropsType.BathroomMirror)
+    public BathroomBrokenMirrorProp(int NumOfTriggeredChangeToStage2, int NumOfTriggeredChangeToStage3) : base(InteractivePropsType.BathroomMirrorBrokenPieces)
     {
         this.NumOfTriggeredChangeToStage2 = NumOfTriggeredChangeToStage2;
         this.NumOfTriggeredChangeToStage3 = NumOfTriggeredChangeToStage3;
@@ -44,15 +44,15 @@ public class BathroomMirrorProp : BaseInteractiveProp
 }
 
 
-public class BathroomMirror : BaseInteractionComponent
+public class BathroomBrokenMirror : BaseInteractionComponent
 {
-    private BathroomMirrorProp props;
+    private BathroomBrokenMirrorProp props;
 
-    [Header("Open Bathroom Mirror Menu")]
-    public UnityEvent OnOpenBathroomMirrorMenu;
+    [Header("Open Bathroom Broken Mirror Menu")]
+    public UnityEvent OnOpenBathroomBrokenMirrorMenu;
     void Start()
     {
-        props = new BathroomMirrorProp(TriggerCountTargetStage2, TriggerCountTargetStage3);
+        props = new BathroomBrokenMirrorProp(TriggerCountTargetStage2, TriggerCountTargetStage3);
     }
 
     void Update()
@@ -60,19 +60,19 @@ public class BathroomMirror : BaseInteractionComponent
     }
     public override void Interact_Stage1()
     {
-        OnOpenBathroomMirrorMenu.Invoke();
+        OnOpenBathroomBrokenMirrorMenu.Invoke();
         props.BoundStage = Stage.Stage1;
     }
 
     public override void Interact_Stage2()
     {
-        OnOpenBathroomMirrorMenu.Invoke();
+        OnOpenBathroomBrokenMirrorMenu.Invoke();
         props.BoundStage = Stage.Stage2;
     }
 
     public override void Interact_Stage3()
     {
-        OnOpenBathroomMirrorMenu.Invoke();
+        OnOpenBathroomBrokenMirrorMenu.Invoke();
         props.BoundStage = Stage.Stage3;
     }
 

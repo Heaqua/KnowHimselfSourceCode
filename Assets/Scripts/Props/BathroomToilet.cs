@@ -52,6 +52,12 @@ public class BathroomToilet : BaseInteractionComponent
 
     [Header("Open Bathroom Toilet Menu")]
     public UnityEvent OnOpenBathroomToiletMenu;
+
+    [Header("Use Toilet")]
+    public UnityEvent OnUseToilet;
+
+    [Header("Drink Toilet water")]
+    public UnityEvent OnDrinkToiletWater;
     void Start()
     {
         props = new BathroomToiletProp(TriggerCountTargetStage2, TriggerCountTargetStage3);
@@ -82,6 +88,7 @@ public class BathroomToilet : BaseInteractionComponent
     {
         Debug.Log("UseToilet");
         props.UseToilet();
+        OnUseToilet.Invoke();
     }
 
     public void DrinkToiletWater()
@@ -89,5 +96,6 @@ public class BathroomToilet : BaseInteractionComponent
         Debug.Log("DrinkToiletWater");
         props.DrinkToiletWater();
         TriggerCount = TriggerCount + 1;
+        OnDrinkToiletWater.Invoke();
     }
 }
