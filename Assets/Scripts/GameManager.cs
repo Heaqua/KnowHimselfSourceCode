@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Commons.Stage CurrentStage;
 
     [Header("Camera Parameters")]
+    public Camera MainCamera;
     public Animator CinemachineStateController;
     public string AnimatorClipFirstPerson = "FirstPerson";
     int AnimatorHashFirstPerson;

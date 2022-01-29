@@ -5,23 +5,62 @@ using TMPro;
 
 public class SubtitleManager : MonoBehaviour
 { 
-
     public static SubtitleManager instance;
     List<string> SubtitleQueue;
 
     [Header("UI Parameters")]
     [SerializeField] TextMeshProUGUI SubtitleDisplay;
-    [Range(1f, 20f)] public float SubtitleDuration;
+    [Range(1f, 20f)] public float SubtitleDuration = 10f;
 
-    // Start is called before the first frame update
-    void Start()
+    bool rendering = false;
+
+    private void OnEnable()
     {
-        
+        SubtitleQueue = new List<string>();
+        ClearQueue();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        ClearQueue();
+    }
+
+    private void Update()
+    {
+        if (!rendering && SubtitleQueue.Count > 0)
+            StartQueueRender();
+    }
+
+    public void AddToQueue(string dialogue) => SubtitleQueue.Add(dialogue);
+
+    public void ClearQueue()
+    {
+        StopAllCoroutines();
+        rendering = false;
+
+        if (SubtitleDisplay != null)
+            SubtitleDisplay.text = string.Empty;
+
+        SubtitleQueue.Clear();
+    }
+
+    void StartQueueRender()
+    {
+        if (SubtitleDisplay == null)
+            return;
+
+        StartCoroutine(RenderQueue());
+    }
+
+    IEnumerator RenderQueue()
+    {
+
+        while (SubtitleQueue.Count > 0)
+        {
+            SubtitleDisplay.text = SubtitleQueue[0];
+            yield return new WaitForSeconds(SubtitleDuration);
+            SubtitleQueue.RemoveAt(0);
+        }
+        SubtitleDisplay.text = string.Empty;
     }
 }
