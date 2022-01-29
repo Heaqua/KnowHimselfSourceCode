@@ -477,6 +477,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46676300}
   m_CullTransparentMesh: 1
+--- !u!1 &53991580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3542207518233385951, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+  m_PrefabInstance: {fileID: 1224152639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &53991581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53991580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e658337b7ccc9a469583071cdc61611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &53991582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53991580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 53991581}
+          m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+          m_MethodName: closePanel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &105095240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1116,10 +1162,22 @@ PrefabInstance:
     - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1983824688}
+      objectReference: {fileID: 1983824690}
     - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: KitchenGasStove, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3542207518233385948, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_Pivot.x
@@ -1224,10 +1282,22 @@ PrefabInstance:
     - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1983824688}
+      objectReference: {fileID: 1983824690}
     - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: KitchenGasStove, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3542207518495294509, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_text
@@ -2092,7 +2162,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 641151531}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1508624095}
+        m_TargetAssemblyTypeName: KitchenFridge, Assembly-CSharp
+        m_MethodName: CloseTheFridge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &641151531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3238,10 +3320,22 @@ PrefabInstance:
     - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1213205790}
+      objectReference: {fileID: 1213205792}
     - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LayDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SleepPlaceBed, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3542207518233385948, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_Pivot.x
@@ -3333,7 +3427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3542207518233385951, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3346,10 +3440,22 @@ PrefabInstance:
     - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1213205790}
+      objectReference: {fileID: 1213205792}
     - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SleepPlaceBed, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3542207518495294509, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_text
@@ -3357,7 +3463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3542207518495294509, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_fontStyle
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
@@ -3689,6 +3795,45 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.010909617, y: 0.019205093, z: 0.0015180025}
   m_Center: {x: -0.006236323, y: 0.00022788155, z: 0.0040909993}
+--- !u!114 &1213205792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213205790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0eb27682aab9a4abceb326ce4bc887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PropType: 0
+  TriggerCountTargetStage2: 1
+  TriggerCountTargetStage3: 1
+  OnInteractStage1:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractStage2:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractStage3:
+    m_PersistentCalls:
+      m_Calls: []
+  OnOpenSleepPlaceBedMenu:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2052790648}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: openPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1224152639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3699,6 +3844,34 @@ PrefabInstance:
     - target: {fileID: 3542207516464003455, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_text
       value: Eat
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1508624095}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Drink
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: KitchenFridge, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207517518999817, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3542207518233385948, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_Pivot.x
@@ -3791,6 +3964,34 @@ PrefabInstance:
     - target: {fileID: 3542207518233385951, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1508624095}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Eat
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: KitchenFridge, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542207518495084896, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3542207518495294509, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
       propertyPath: m_text
@@ -4431,6 +4632,63 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.016795477, y: 0.0064546093, z: 0.0068524056}
   m_Center: {x: -0.02078215, y: 0.012214271, z: 0.0033394196}
+--- !u!1 &1508624092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e76ffcfef63c7c646b5558793182ad48, type: 3}
+  m_PrefabInstance: {fileID: 1850823447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1508624094
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508624092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1508624095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508624092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7d15916021e754c9668a2cf3988921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PropType: 0
+  TriggerCountTargetStage2: 1
+  TriggerCountTargetStage3: 1
+  OnInteractStage1:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractStage2:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractStage3:
+    m_PersistentCalls:
+      m_Calls: []
+  OnOpenKitchenFridgeMenu:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 53991581}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: openPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1562618656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9413,6 +9671,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnUseToilet:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrinkToiletWater:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1690905305 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 281855664364225751, guid: c632c524b611423478a4e4a7dfc8d35e, type: 3}
@@ -10070,7 +10334,7 @@ GameObject:
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10224,6 +10488,58 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6248574976466802116, guid: c632c524b611423478a4e4a7dfc8d35e, type: 3}
   m_PrefabInstance: {fileID: 1824825817}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1983824689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983824688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0033621788, y: 0.0041753314, z: 0.0007824906}
+  m_Center: {x: -0.04450776, y: -0.011894533, z: 0.007890835}
+--- !u!114 &1983824690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983824688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0944e3f19e682c14580bfc26eae60092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PropType: 0
+  TriggerCountTargetStage2: 1
+  TriggerCountTargetStage3: 1
+  OnInteractStage1:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractStage2:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractStage3:
+    m_PersistentCalls:
+      m_Calls: []
+  OnOpenKitchenGasStoveMenu:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1698720491}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: openPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1995302581 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1891630423312683343, guid: c632c524b611423478a4e4a7dfc8d35e, type: 3}
@@ -10256,7 +10572,7 @@ MonoBehaviour:
   OnOpenKitchenKnifeMenu:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2014775852}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: openPanel
         m_Mode: 1
@@ -10601,6 +10917,65 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   cam: {fileID: 1360124021}
+--- !u!1 &2052790646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3542207518233385951, guid: 6063f0b0500eb344189f07f8a8999b8e, type: 3}
+  m_PrefabInstance: {fileID: 965368537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2052790647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052790646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2052790648}
+          m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+          m_MethodName: closePanel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &2052790648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052790646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e658337b7ccc9a469583071cdc61611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2052790649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052790646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2056288233
 PrefabInstance:
   m_ObjectHideFlags: 0

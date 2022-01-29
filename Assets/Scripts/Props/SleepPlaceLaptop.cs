@@ -46,12 +46,12 @@ public class SleepPlaceLaptopProp : BaseInteractiveProp
         int numOfTriggerToStage2 = NumOfTriggeredChangeToStage2;
         int numOfTriggerToStage3 = NumOfTriggeredChangeToStage3;
 
-        if (checkTime.getNumberOfTriggered() == numOfTriggerToStage2 &&
+        if (playGame.getNumberOfTriggered() == numOfTriggerToStage2 &&
             (BoundStage == Stage.Stage2 || BoundStage == Stage.Stage3))
         {
             CurrStage = Stage.Stage2;
         }
-        else if (checkTime.getNumberOfTriggered() == numOfTriggerToStage3 &&
+        else if (playGame.getNumberOfTriggered() == numOfTriggerToStage3 &&
             BoundStage == Stage.Stage3)
         {
             CurrStage = Stage.Stage3;

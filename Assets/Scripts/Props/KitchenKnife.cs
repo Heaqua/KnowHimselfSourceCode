@@ -54,7 +54,7 @@ public class KitchenKnife : BaseInteractionComponent
 {
     private KitchenKnifeProp props;
 
-    [Header("Open Sleep Place Laptop Menu")]
+    [Header("Open Kitchen Knife Menu")]
     public UnityEvent OnOpenKitchenKnifeMenu;
     void Start()
     {
