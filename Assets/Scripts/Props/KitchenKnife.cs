@@ -10,8 +10,12 @@ public class KitchenKnifeProp : BaseInteractiveProp
     private BaseInteraction killYourself;
     private BaseInteraction pullDown;
     private BaseInteraction peelApple;
-    public KitchenKnifeProp() : base(InteractivePropsType.KitchenKnife)
+    public int NumOfTriggeredChangeToStage2 { get; private set; }
+    public int NumOfTriggeredChangeToStage3 { get; private set; }
+    public KitchenKnifeProp(int NumOfTriggeredChangeToStage2, int NumOfTriggeredChangeToStage3) : base(InteractivePropsType.KitchenKnife)
     {
+        this.NumOfTriggeredChangeToStage2 = NumOfTriggeredChangeToStage2;
+        this.NumOfTriggeredChangeToStage3 = NumOfTriggeredChangeToStage3;
         pullDown = new BaseInteraction(false);
         peelApple = new BaseInteraction(false);
         killYourself = new BaseInteraction(true);
@@ -19,8 +23,8 @@ public class KitchenKnifeProp : BaseInteractiveProp
     public void KillYourself()
     {
         killYourself.interact();
-        int numOfTriggerToStage2 = Constraints.NumOfTriggeredChangeToStage2;
-        int numOfTriggerToStage3 = Constraints.NumOfTriggeredChangeToStage3;
+        int numOfTriggerToStage2 = NumOfTriggeredChangeToStage2;
+        int numOfTriggerToStage3 = NumOfTriggeredChangeToStage3;
 
         if (killYourself.getNumberOfTriggered() == numOfTriggerToStage2 &&
             (BoundStage == Stage.Stage2 || BoundStage == Stage.Stage3))
@@ -46,7 +50,7 @@ public class KitchenKnifeProp : BaseInteractiveProp
 }
 
 
-public class KitchenKnife : MonoBehaviour, IPointerEnterHandler
+public class KitchenKnife : BaseInteractionComponent
 {
     private KitchenKnifeProp props;
 
@@ -54,17 +58,11 @@ public class KitchenKnife : MonoBehaviour, IPointerEnterHandler
     public UnityEvent OnOpenKitchenKnifeMenu;
     void Start()
     {
-        props = new KitchenKnifeProp();
+        props = new KitchenKnifeProp(TriggerCountTargetStage2, TriggerCountTargetStage3);
     }
 
     void Update()
     {
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("OnOpenKitchenKnifeMenu.Invoke");
-        OnOpenKitchenKnifeMenu.Invoke();
     }
 
     public void PullDown()
@@ -77,6 +75,7 @@ public class KitchenKnife : MonoBehaviour, IPointerEnterHandler
     {
         Debug.Log("KillYourself");
         props.KillYourself();
+        TriggerCount = TriggerCount + 1;
     }
 
     public void PeelApple()

@@ -9,7 +9,7 @@ namespace Commons
         protected InteractivePropsType PropType { get; }
         protected InteractivePropConstraints Constraints { get; }
         protected Stage CurrStage { get; set; }
-        protected Stage BoundStage { get; set; }
+        public Stage BoundStage { get; set; }
 
         public BaseInteractiveProp(InteractivePropsType type)
         {
