@@ -19,13 +19,17 @@ public class GameManager : MonoBehaviour
     public string AnimatorClipLaptop = "Laptop";
     int AnimatorHashLaptop;
 
-    [Header("Events")]
-    public UnityEvent OnNextStage;
-
-    public bool LaptopCamEnabled { get; private set; }
+    [Header("Laptop Parameters")]
     // jane's code
     public GameObject laptopPrefab;
     public GameObject laptopModel;
+    public bool LaptopCamEnabled { get; private set; }
+
+    [Header("Audio Parameters")]
+    [SerializeField] BGMManager bgm;
+
+    [Header("Events")]
+    public UnityEvent OnNextStage;
 
     private void Awake()
     {
@@ -37,6 +41,14 @@ public class GameManager : MonoBehaviour
         AnimatorHashFirstPerson = Animator.StringToHash(AnimatorClipFirstPerson);
         AnimatorHashThirdPerson = Animator.StringToHash(AnimatorClipThirdPerson);
         AnimatorHashLaptop = Animator.StringToHash(AnimatorClipLaptop);
+    }
+
+    private void OnEnable()
+    {
+        if (bgm == null)
+            bgm = BGMManager.instance;
+        if (bgm == null)
+            bgm = FindObjectOfType<BGMManager>();
     }
 
     public void GotoNextStage()
@@ -55,6 +67,10 @@ public class GameManager : MonoBehaviour
             else
                 CinemachineStateController.Play(AnimatorHashFirstPerson);
         }
+
+        // Change BGM
+        if (bgm != null)
+            bgm.PlayMusic(CurrentStage);
 
 
         OnNextStage.Invoke();

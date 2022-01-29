@@ -13,6 +13,9 @@ public class BGMManager : MonoBehaviour
     public AudioClip BGMStage2;
     public AudioClip BGMStage3;
 
+    [Header("Parameters")]
+    public bool PlayOnEnable;
+
     AudioSource Source;
 
     private void Awake()
@@ -30,6 +33,15 @@ public class BGMManager : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        if (Source == null)
+            return;
+
+        if (PlayOnEnable)
+            PlayMusic(Commons.Stage.Stage1);
+    }
+
     public void StopMusic()
     {
         if (Source == null)
@@ -43,14 +55,23 @@ public class BGMManager : MonoBehaviour
         if (Source == null)
             return;
 
+        if (Source.isPlaying)
+            Source.Stop();
+
         switch (CurrentStage)
         {
             case Commons.Stage.Stage1:
+                Source.clip = BGMStage1;
                 break;
             case Commons.Stage.Stage2:
+                Source.clip = BGMStage2;
                 break;
             case Commons.Stage.Stage3:
+                Source.clip = BGMStage3;
                 break;
         }
+
+        if (Source.clip != null)
+            Source.Play();
     }
 }
