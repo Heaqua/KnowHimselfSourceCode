@@ -40,7 +40,7 @@ public class BathroomToiletProp : BaseInteractiveProp
 }
 
 
-public class BathroomToilet : MonoBehaviour, IPointerEnterHandler
+public class BathroomToilet : BaseInteractionComponent
 {
     private BathroomToiletProp props;
 
@@ -54,10 +54,18 @@ public class BathroomToilet : MonoBehaviour, IPointerEnterHandler
     void Update()
     {
     }
-
-    public void OnPointerEnter(PointerEventData eventData)
+    public override void Interact_Stage1()
     {
-        Debug.Log("OnOpenBathroomToiletMenu.Invoke");
+        OnOpenBathroomToiletMenu.Invoke();
+    }
+
+    public override void Interact_Stage2()
+    {
+        OnOpenBathroomToiletMenu.Invoke();
+    }
+
+    public override void Interact_Stage3()
+    {
         OnOpenBathroomToiletMenu.Invoke();
     }
 
