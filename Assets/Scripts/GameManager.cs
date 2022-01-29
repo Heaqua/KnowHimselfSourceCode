@@ -1,6 +1,10 @@
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
+
+using System.Collections;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -109,14 +113,14 @@ public class GameManager : MonoBehaviour
         {
             // Jane's code
             EnableLaptopCam();
-            instantiateLaptop();
+            StartCoroutine(instantiateLaptop());
             
         }
     }
 
-    void instantiateLaptop()
+    IEnumerator instantiateLaptop()
     {
-        new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.8f);
         laptopPrefab=Instantiate(laptopPrefab, laptopModel.transform.position, quaternion.identity);
     }
     public void ToggleLaptopCam(bool NewCamState)
