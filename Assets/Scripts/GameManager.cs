@@ -93,10 +93,16 @@ public class GameManager : MonoBehaviour
         {
             // Jane's code
             EnableLaptopCam();
-            laptopPrefab=Instantiate(laptopPrefab, laptopModel.transform.position, quaternion.identity);
+            instantiateLaptop();
+            
         }
     }
 
+    void instantiateLaptop()
+    {
+        new WaitForSeconds(1);
+        laptopPrefab=Instantiate(laptopPrefab, laptopModel.transform.position, quaternion.identity);
+    }
     public void ToggleLaptopCam(bool NewCamState)
     {
         if (NewCamState)

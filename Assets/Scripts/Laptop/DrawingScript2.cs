@@ -191,7 +191,7 @@ public class DrawingScript2 : MonoBehaviour
         RectTransformUtility.ScreenPointToWorldPointInRectangle(rawImage.rectTransform, Mouse.current.position.ReadValue(),
             drawingCamera, out var mousePosition3);
         Vector2 mousePosition = mousePosition3;
-        mousePosition -= new Vector2(3.25f, 2f);
+        mousePosition -= new Vector2(7.0f, 2.5f);
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
             lastMousePosition = mousePosition;

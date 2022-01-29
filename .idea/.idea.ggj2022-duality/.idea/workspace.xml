@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f73a3dac-319f-43e5-a326-531a4c5be4fb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ggj2022-duality/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ggj2022-duality/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DrawingGame.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DrawingGame.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Laptop 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Laptop 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DrawingGame1.0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DrawingGame1.0.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Commons/BaseInteractionComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Commons/BaseInteractionComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Commons/BaseInteractiveProps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Commons/BaseInteractiveProps.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/BathroomMirror.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/BathroomBrokenMirror.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/BathroomMirror.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/BathroomBrokenMirror.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/BathroomToilet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/BathroomToilet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/KitchenKnife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/KitchenKnife.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/SleepPlaceLaptop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/SleepPlaceLaptop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Laptop/DrawingGameButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Laptop/DrawingGameButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Laptop/DrawingScript2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Laptop/DrawingScript2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1643115581515</updated>
       <workItem from="1643115597810" duration="287000" />
-      <workItem from="1643385078412" duration="5054000" />
+      <workItem from="1643385078412" duration="7720000" />
     </task>
     <servers />
   </component>

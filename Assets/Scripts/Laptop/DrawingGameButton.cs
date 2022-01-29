@@ -29,8 +29,7 @@ public class DrawingGameButton : MonoBehaviour, IPointerClickHandler
         {
             Debug.Log("double Clicked");
             drawingGame = Instantiate(drawingGame,this.transform.position, Quaternion.identity);
-            drawingGame.transform.GetChild(1).GetComponent<DrawingScript2>().drawingCamera = drawingCamera;
-            Debug.Log(drawingGame.transform.GetChild(1).name);
+            drawingGame.transform.GetChild(0).GetChild(0).GetComponent<DrawingScript2>().drawingCamera = drawingCamera;
             Destroy(this.transform.parent.gameObject);
         }
     }
