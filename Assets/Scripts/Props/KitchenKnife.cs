@@ -65,6 +65,26 @@ public class KitchenKnife : BaseInteractionComponent
     {
     }
 
+    public override void Interact_Stage1()
+    {
+        OnOpenKitchenKnifeMenu.Invoke();
+        props.BoundStage = Stage.Stage1;
+    }
+
+    public override void Interact_Stage2()
+    {
+        OnOpenKitchenKnifeMenu.Invoke();
+        props.BoundStage = Stage.Stage2;
+    }
+
+    public override void Interact_Stage3()
+    {
+        OnOpenKitchenKnifeMenu.Invoke();
+        props.BoundStage = Stage.Stage3;
+    }
+
+
+
     public void PullDown()
     {
         Debug.Log("PullDown");

@@ -85,6 +85,24 @@ public class SleepPlaceLaptop : BaseInteractionComponent
     {
     }
 
+    public override void Interact_Stage1()
+    {
+        OnOpenSleepPlaceLaptopMenu.Invoke();
+        props.BoundStage = Stage.Stage1;
+    }
+
+    public override void Interact_Stage2()
+    {
+        OnOpenSleepPlaceLaptopMenu.Invoke();
+        props.BoundStage = Stage.Stage2;
+    }
+
+    public override void Interact_Stage3()
+    {
+        OnOpenSleepPlaceLaptopMenu.Invoke();
+        props.BoundStage = Stage.Stage3;
+    }
+
     public void CheckNews()
     {
         Debug.Log("CheckNews");
