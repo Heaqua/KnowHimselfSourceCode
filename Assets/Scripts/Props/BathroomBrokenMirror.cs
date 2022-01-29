@@ -9,8 +9,12 @@ public class BathroomMirrorProp : BaseInteractiveProp
 {
     private BaseInteraction clearAway;
     private BaseInteraction killYourself;
-    public BathroomMirrorProp() : base(InteractivePropsType.BathroomMirror)
+    public int NumOfTriggeredChangeToStage2 { get; private set; }
+    public int NumOfTriggeredChangeToStage3 { get; private set; }
+    public BathroomMirrorProp(int NumOfTriggeredChangeToStage2, int NumOfTriggeredChangeToStage3) : base(InteractivePropsType.BathroomMirror)
     {
+        this.NumOfTriggeredChangeToStage2 = NumOfTriggeredChangeToStage2;
+        this.NumOfTriggeredChangeToStage3 = NumOfTriggeredChangeToStage3;
         clearAway = new BaseInteraction(false);
         killYourself = new BaseInteraction(true);
     }
@@ -23,8 +27,8 @@ public class BathroomMirrorProp : BaseInteractiveProp
     public void KillYourself()
     {
         killYourself.interact();
-        int numOfTriggerToStage2 = Constraints.NumOfTriggeredChangeToStage2;
-        int numOfTriggerToStage3 = Constraints.NumOfTriggeredChangeToStage3;
+        int numOfTriggerToStage2 = NumOfTriggeredChangeToStage2;
+        int numOfTriggerToStage3 = NumOfTriggeredChangeToStage3;
 
         if (killYourself.getNumberOfTriggered() == numOfTriggerToStage2 &&
             (BoundStage == Stage.Stage2 || BoundStage == Stage.Stage3))
@@ -40,7 +44,7 @@ public class BathroomMirrorProp : BaseInteractiveProp
 }
 
 
-public class BathroomMirror : MonoBehaviour
+public class BathroomMirror : BaseInteractionComponent
 {
     private BathroomMirrorProp props;
 
@@ -48,17 +52,28 @@ public class BathroomMirror : MonoBehaviour
     public UnityEvent OnOpenBathroomMirrorMenu;
     void Start()
     {
-        props = new BathroomMirrorProp();
+        props = new BathroomMirrorProp(TriggerCountTargetStage2, TriggerCountTargetStage3);
     }
 
     void Update()
     {
     }
-
-    public void OnPointerEnter(PointerEventData eventData)
+    public override void Interact_Stage1()
     {
-        Debug.Log("OnOpenBathroomMirrorMenu.Invoke");
         OnOpenBathroomMirrorMenu.Invoke();
+        props.BoundStage = Stage.Stage1;
+    }
+
+    public override void Interact_Stage2()
+    {
+        OnOpenBathroomMirrorMenu.Invoke();
+        props.BoundStage = Stage.Stage2;
+    }
+
+    public override void Interact_Stage3()
+    {
+        OnOpenBathroomMirrorMenu.Invoke();
+        props.BoundStage = Stage.Stage3;
     }
 
     public void ClearAway()
@@ -71,5 +86,6 @@ public class BathroomMirror : MonoBehaviour
     {
         Debug.Log("KillYourself");
         props.KillYourself();
+        TriggerCount = TriggerCount + 1;
     }
 }

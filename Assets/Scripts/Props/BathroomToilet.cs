@@ -9,8 +9,14 @@ public class BathroomToiletProp : BaseInteractiveProp
 {
     private BaseInteraction goToToilet;
     private BaseInteraction drinkToiletWater;
-    public BathroomToiletProp() : base(InteractivePropsType.BathroomToilet)
+
+    public int NumOfTriggeredChangeToStage2 { get; private set; }
+    public int NumOfTriggeredChangeToStage3 { get; private set; }
+
+    public BathroomToiletProp(int NumOfTriggeredChangeToStage2, int NumOfTriggeredChangeToStage3) : base(InteractivePropsType.BathroomToilet)
     {
+        this.NumOfTriggeredChangeToStage2 = NumOfTriggeredChangeToStage2;
+        this.NumOfTriggeredChangeToStage3 = NumOfTriggeredChangeToStage3;
         goToToilet = new BaseInteraction(false);
         drinkToiletWater = new BaseInteraction(true);
     }
@@ -23,8 +29,8 @@ public class BathroomToiletProp : BaseInteractiveProp
     public void DrinkToiletWater()
     {
         drinkToiletWater.interact();
-        int numOfTriggerToStage2 = Constraints.NumOfTriggeredChangeToStage2;
-        int numOfTriggerToStage3 = Constraints.NumOfTriggeredChangeToStage3;
+        int numOfTriggerToStage2 = NumOfTriggeredChangeToStage2;
+        int numOfTriggerToStage3 = NumOfTriggeredChangeToStage3;
 
         if (drinkToiletWater.getNumberOfTriggered() == numOfTriggerToStage2 &&
             (BoundStage == Stage.Stage2 || BoundStage == Stage.Stage3))
@@ -48,7 +54,7 @@ public class BathroomToilet : BaseInteractionComponent
     public UnityEvent OnOpenBathroomToiletMenu;
     void Start()
     {
-        props = new BathroomToiletProp();
+        props = new BathroomToiletProp(TriggerCountTargetStage2, TriggerCountTargetStage3);
     }
 
     void Update()
@@ -57,16 +63,19 @@ public class BathroomToilet : BaseInteractionComponent
     public override void Interact_Stage1()
     {
         OnOpenBathroomToiletMenu.Invoke();
+        props.BoundStage = Stage.Stage1;
     }
 
     public override void Interact_Stage2()
     {
         OnOpenBathroomToiletMenu.Invoke();
+        props.BoundStage = Stage.Stage2;
     }
 
     public override void Interact_Stage3()
     {
         OnOpenBathroomToiletMenu.Invoke();
+        props.BoundStage = Stage.Stage3;
     }
 
     public void UseToilet()
@@ -79,5 +88,6 @@ public class BathroomToilet : BaseInteractionComponent
     {
         Debug.Log("DrinkToiletWater");
         props.DrinkToiletWater();
+        TriggerCount = TriggerCount + 1;
     }
 }

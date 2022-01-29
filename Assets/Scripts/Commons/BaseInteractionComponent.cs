@@ -9,7 +9,7 @@ namespace Commons
     {
         [Header("Prop Parameters")]
         public InteractivePropsType PropType;
-        public int TriggerCount { get; private set; } = 0;
+        public int TriggerCount { get; protected set; } = 0;
         [Range(1, 32)] public int TriggerCountTargetStage2 = 1;
         [Range(1, 32)] public int TriggerCountTargetStage3 = 1;
 
@@ -62,8 +62,6 @@ namespace Commons
             }
             else
                 OnInteractStage1.Invoke();
-
-            TriggerCount++;
         }
 
         public void ResetTrigger() => TriggerCount = 0;
