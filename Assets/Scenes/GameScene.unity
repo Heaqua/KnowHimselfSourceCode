@@ -2900,6 +2900,8 @@ MonoBehaviour:
   OnNextStage:
     m_PersistentCalls:
       m_Calls: []
+  laptopPrefab: {fileID: 3668069741814664301, guid: a48fad1de3fec1a48b2e1067add72e71, type: 3}
+  laptopModel: {fileID: 1576216684}
 --- !u!1 &947897262 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: a57ab3cb58290b24ca4e3f20ac3b5cff, type: 3}
@@ -8950,6 +8952,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1576216684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2181743766629440291, guid: 3f78be2e24272ee449f1fe8b0d406f24, type: 3}
+  m_PrefabInstance: {fileID: 1562618656}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1601410170 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8009987137999418058, guid: c81b855cf47f1c247bf75ef4e3e7ff26, type: 3}

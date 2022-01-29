@@ -8,6 +8,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections;
 using System.Collections.Generic;
+using static PredefinedImage;
 
 
 [RequireComponent(typeof(RawImage))]
@@ -21,7 +22,8 @@ public class DrawingScript2 : MonoBehaviour
     public float brushScale = 1f;
     public bool isDrawing = false;
     public GameObject score;
-    public enum Stage {Stage1, Stage2, Stage3, Save} // Save for development use only
+    public GameObject instruction;
+    public enum Stage {Stage1, Stage2, Stage3, Save2, Save3} // Save for development use only
 
     public Stage stage;
 
@@ -36,8 +38,9 @@ public class DrawingScript2 : MonoBehaviour
 
     void Start()
     {
+        
         rawImage = GetComponent<RawImage>();
-
+        Debug.Log(rawImage.rectTransform.rect.position);
         brushTexture.wrapMode = TextureWrapMode.Clamp;
         brushMaterial.mainTexture = brushTexture;
 
@@ -54,22 +57,60 @@ public class DrawingScript2 : MonoBehaviour
         switch (stage)
         {
             case Stage.Stage2:
-                LoadData();
+                LoadQuestionMark();
+                break;
+            case Stage.Stage3:
+                LoadToilet();
                 break;
         }
     }
 
     void Update()
     {
-        Draw();
+        ShowInstruction();
+
         if (IsDrawingCompleted())
         {
             ShowScore();
-            if (stage == Stage.Save) SaveData();
+            if (stage == Stage.Save2) SaveQuestionMark();
+            // if (stage == Stage.Save3) SaveToilet();
         }
-        
+
+        if (isDrawing) Draw();
     }
 
+    void StartDraw()
+    {
+        // the moment the player starts drawing
+
+        ClearCanvas();
+        score.GetComponent<TextMeshProUGUI>().SetText("");
+        switch (stage)
+        {
+            case Stage.Stage2:
+                StartCoroutine(PlayeeDrawsQuestionMark());
+                break;
+            case Stage.Stage3:
+                StartCoroutine(PlayeeDrawsToilet());
+                break;
+        }
+    }
+
+    void ShowInstruction()
+    {
+        switch (stage)
+        {
+            case Stage.Stage1:
+                instruction.GetComponent<TextMeshProUGUI>().SetText("Please draw a duck:");
+                break;
+            case Stage.Stage2:
+                instruction.GetComponent<TextMeshProUGUI>().SetText("Please draw a exclamation mark '!':");
+                break;
+            case Stage.Stage3:
+                instruction.GetComponent<TextMeshProUGUI>().SetText("Please draw a water bottle:");
+                break;
+        }
+    }
     void ShowScore()
     {
         int scoreInt = 0;
@@ -93,46 +134,19 @@ public class DrawingScript2 : MonoBehaviour
 
     
 
-    #region Save&Load
-    private List<SerializedVector2> _questionMark = new List<SerializedVector2>();
-    void SaveData()
-    {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/QuestionMark.dat");
-        Debug.Log(Application.persistentDataPath + "/QuestionMark.dat");
-        SavePredefinedImage.questionMark = _questionMark.ToArray() ;
-        bf.Serialize(file, SavePredefinedImage.questionMark);
-        file.Close();
-    }
-    void LoadData()
-    {
-        if (File.Exists(Application.persistentDataPath + "/QuestionMark.dat"))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/QuestionMark.dat", FileMode.Open);
-            SavePredefinedImage.questionMark = (SerializedVector2[]) bf.Deserialize(file);
-        }
-    }
-    #endregion
-    
+
     // If a player has started drawing something, and ends his drawing for more than 1 second, we give a score
     private bool drawingStarted = false;
-    private float drawingCompletedTime = 0f;
+    public float drawingCompletedTime = 0f;
     private bool IsDrawingCompleted()
     {
+        isDrawing = Mouse.current.leftButton.isPressed;
         if (isDrawing && !drawingStarted)
         {
-            // the moment the player starts drawing
-            ClearCanvas();
-            score.GetComponent<TextMeshProUGUI>().SetText("");
             drawingStarted = true;
             drawingCompletedTime = 0;
-            switch (stage)
-            {
-                case Stage.Stage2:
-                    StartCoroutine(PlayeeDrawsQuestionMark());
-                    break;
-            }
+            StartDraw();
+
         }else if (isDrawing)
         {
             // Continues drawing
@@ -149,27 +163,21 @@ public class DrawingScript2 : MonoBehaviour
     
     private void Draw()
     {
-        if (!Mouse.current.leftButton.isPressed)
-        {
-            isDrawing = false;
-            return;
-        }
-
-        isDrawing = true;
 
         switch (stage)
         {
             case Stage.Stage1:
                 DrawExactly();
                 break;
-            case Stage.Save:
+            case Stage.Save2: 
+            case Stage.Save3:
                 DrawExactly();
                 break;
             case Stage.Stage2:
+                
             case Stage.Stage3:
-                // StartCoroutine in the function IsDrawingCompleted
+                // StartCoroutine in the function StartDraw
                 break;
-            // TODO: Stage2, Stage3
         }
 
 
@@ -183,7 +191,7 @@ public class DrawingScript2 : MonoBehaviour
         RectTransformUtility.ScreenPointToWorldPointInRectangle(rawImage.rectTransform, Mouse.current.position.ReadValue(),
             drawingCamera, out var mousePosition3);
         Vector2 mousePosition = mousePosition3;
-        mousePosition -= new Vector2(2.75f, 1.5f);
+        mousePosition -= new Vector2(3.25f, 2f);
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
             lastMousePosition = mousePosition;
@@ -192,7 +200,8 @@ public class DrawingScript2 : MonoBehaviour
         foreach (Vector2 point in GetPointsBetween(mousePosition, lastMousePosition))
         {
             DrawBrush(point);
-            if(stage == Stage.Save) _questionMark.Add(new SerializedVector2(point));
+            if(stage == Stage.Save2) _questionMark.Add(new SerializedVector2(point));
+            if(stage == Stage.Save3) _toilet.Add(new SerializedVector2(point));
         }
 
         lastMousePosition = mousePosition;
@@ -234,53 +243,30 @@ public class DrawingScript2 : MonoBehaviour
         GL.Clear(true, true, Color.clear);
         RenderTexture.active = screen;
     }
-    
-    #region ToSavePredefinedImage
-
-    [Serializable]
-    class SavePredefinedImage
-    {
-        public static SerializedVector2[] questionMark;
-    }
-    
-    [Serializable]class SerializedVector2
-    {
-        public float _x;
-        public float _y;
-     
-        public Vector2 Vector2
-        {
-            get{
-                return new Vector2(_x, _y);
-            }
-            set
-            {
-                _x = value.x;
-                _y = value.y;
-            }
-        }
-
-        public SerializedVector2(Vector2 _vector2)
-        {
-            _x = _vector2.x;
-            _y = _vector2.y;
-        }
-    }
-
-
-    #endregion
-
+ 
     #region DrawPredefined
 
-    private float delay = 0.002f;
+    private float delay = 0.0001f;
 
     IEnumerator PlayeeDrawsQuestionMark()
     {
-        drawingCompletedTime = 0;
-        for (int i = 0; i < SavePredefinedImage.questionMark.Length; i++)
+        
+        for (int i = 0; i < SavePredefinedImage.questionMark.Length; i+=3)
         {
             DrawBrush(SavePredefinedImage.questionMark[i].Vector2);
-            yield return new WaitForSeconds(delay);
+            drawingCompletedTime -= Time.deltaTime;
+            yield return new WaitForSeconds(0); //delay
+        }
+    }
+    
+    IEnumerator PlayeeDrawsToilet()
+    {
+        
+        for (int i = 0; i < SavePredefinedImage.toilet.Length; i+=3) // to control the speed
+        {
+            DrawBrush(SavePredefinedImage.toilet[i].Vector2);
+            drawingCompletedTime -= Time.deltaTime;
+            yield return new WaitForSeconds(0); // delay
         }
     }
 

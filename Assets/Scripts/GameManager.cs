@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,6 +23,9 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnNextStage;
 
     public bool LaptopCamEnabled { get; private set; }
+    // jane's code
+    public GameObject laptopPrefab;
+    public GameObject laptopModel;
 
     private void Awake()
     {
@@ -80,9 +84,17 @@ public class GameManager : MonoBehaviour
     public void ToggleLaptopCam()
     {
         if (LaptopCamEnabled)
+        {
             DisableLaptopCam();
+            Destroy(laptopPrefab);
+        }
+        
         else
+        {
+            // Jane's code
             EnableLaptopCam();
+            laptopPrefab=Instantiate(laptopPrefab, laptopModel.transform.position, quaternion.identity);
+        }
     }
 
     public void ToggleLaptopCam(bool NewCamState)
