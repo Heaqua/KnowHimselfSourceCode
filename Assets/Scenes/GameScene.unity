@@ -5953,7 +5953,7 @@ MonoBehaviour:
   AnimatorClipFirstPerson: FirstPerson
   AnimatorClipThirdPerson: ThirdPerson
   AnimatorClipLaptop: Laptop
-  laptopPrefab: {fileID: 3668069741814664301, guid: a48fad1de3fec1a48b2e1067add72e71, type: 3}
+  laptopPrefab: {fileID: 4104904668969528506, guid: de585d305f085214db9d4480323f8579, type: 3}
   laptopModel: {fileID: 1576216684}
   bgm: {fileID: 0}
   OnNextStage:

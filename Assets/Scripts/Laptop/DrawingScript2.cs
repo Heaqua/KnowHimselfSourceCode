@@ -73,7 +73,7 @@ public class DrawingScript2 : MonoBehaviour
         {
             ShowScore();
             if (stage == Stage.Save2) SaveQuestionMark();
-            // if (stage == Stage.Save3) SaveToilet();
+            if (stage == Stage.Save3) SaveToilet();
         }
 
         if (isDrawing) Draw();
@@ -114,19 +114,22 @@ public class DrawingScript2 : MonoBehaviour
     void ShowScore()
     {
         int scoreInt = 0;
+        string encourage = "";
         switch (stage)
         {
             case Stage.Stage1:
                 scoreInt = new Random().Next(11, 30);
+                encourage = "\nKeep working!";
                 break;
             case Stage.Stage2:
             case Stage.Stage3:
                 scoreInt = new Random().Next(80, 100);
+                encourage = "\nBrilliant!";
                 break;
         }
-        
-        string scoreString = $"Your score: {scoreInt}"+
-                             "\nKeep working!";
+
+        string scoreString = $"Your score: {scoreInt}" + encourage;
+                             ;
         score.GetComponent<TextMeshProUGUI>().SetText(scoreString);
         drawingStarted = false;
         drawingCompletedTime = 0;
@@ -215,7 +218,7 @@ public class DrawingScript2 : MonoBehaviour
         Graphics.DrawMesh(brushMesh, matrix, brushMaterial, 0, drawingCamera);
     }
 
-    Vector2[] GetPointsBetween(Vector2 a, Vector2 b)
+    Vector2[] GetPointsBetween(Vector2 b, Vector2 a)
     {
         float spacing = 0.05f;
         Vector2 dir = (b - a).normalized;
@@ -251,7 +254,7 @@ public class DrawingScript2 : MonoBehaviour
     IEnumerator PlayeeDrawsQuestionMark()
     {
         
-        for (int i = 0; i < SavePredefinedImage.questionMark.Length; i+=3)
+        for (int i = 0; i < SavePredefinedImage.questionMark.Length; i+=1)
         {
             DrawBrush(SavePredefinedImage.questionMark[i].Vector2);
             drawingCompletedTime -= Time.deltaTime;
@@ -262,7 +265,7 @@ public class DrawingScript2 : MonoBehaviour
     IEnumerator PlayeeDrawsToilet()
     {
         
-        for (int i = 0; i < SavePredefinedImage.toilet.Length; i+=3) // to control the speed
+        for (int i = 0; i < SavePredefinedImage.toilet.Length; i+=5) // to control the speed
         {
             DrawBrush(SavePredefinedImage.toilet[i].Vector2);
             drawingCompletedTime -= Time.deltaTime;

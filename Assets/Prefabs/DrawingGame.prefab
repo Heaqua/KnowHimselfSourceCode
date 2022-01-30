@@ -169,7 +169,7 @@ MonoBehaviour:
   isDrawing: 0
   score: {fileID: 5519758023989604344}
   instruction: {fileID: 5867068394857526866}
-  stage: 0
+  stage: 2
   drawingCamera: {fileID: 0}
   drawingCompletedTime: 0
 --- !u!114 &1503806956797972920
@@ -452,7 +452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -394.6269, y: 209.99847}
+  m_AnchoredPosition: {x: -327, y: 195}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5867068394857526869

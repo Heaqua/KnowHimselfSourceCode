@@ -3,7 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="f73a3dac-319f-43e5-a326-531a4c5be4fb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ggj2022-duality/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ggj2022-duality/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DrawingGame.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DrawingGame.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Laptop 1(Clone).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Laptop 1(Clone).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Laptop 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Laptop 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DrawingGame1.0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DrawingGame1.0.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Laptop/DrawingScript2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Laptop/DrawingScript2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Laptop/PredefinedImage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Laptop/PredefinedImage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Laptop/QuestionMark.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Laptop/QuestionMark.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Laptop/Toilet.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Laptop/Toilet.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +26,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ad0a7939819048a0a161f66558c9886726800/61/6cede232/Animator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Laptop/LetterButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f98083cbc97e4fa0a4ef2f523feff5e113bc00/bd/ab2afc71/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.2.0/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f98083cbc97e4fa0a4ef2f523feff5e113bc00/b8/566b61a7/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -37,6 +49,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Games\Know Himself.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\I525964\Documents\Games" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -67,7 +87,8 @@
       <option name="presentableId" value="Default" />
       <updated>1643115581515</updated>
       <workItem from="1643115597810" duration="287000" />
-      <workItem from="1643385078412" duration="8424000" />
+      <workItem from="1643385078412" duration="9526000" />
+      <workItem from="1643480422400" duration="7014000" />
     </task>
     <servers />
   </component>
@@ -99,6 +120,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

@@ -84,9 +84,11 @@ public class PredefinedImage : MonoBehaviour
         }
         public static void LoadQuestionMark()
         {
+            Debug.Log("function called");
             if (File.Exists(Application.dataPath + "/Scripts/Laptop/QuestionMark.dat"))
             {
                 BinaryFormatter bf = new BinaryFormatter();
+                Debug.Log("File exists");
                 FileStream file = File.Open(Application.dataPath + "/Scripts/Laptop/QuestionMark.dat", FileMode.Open);
                 SavePredefinedImage.questionMark = (SerializedVector2[]) bf.Deserialize(file);
             }
